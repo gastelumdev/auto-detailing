@@ -47,7 +47,7 @@ export default function Navbar({ links, children }: { links: {href: string, titl
             _hover={{bg: useColorModeValue('gray.800', 'gray.900')}}
           />
           <Flex justify={"space-between"} alignItems={'center'}>
-            <Box><Heading size={"sm"}>Corona Auto Detailing</Heading></Box>
+            <Box><Flex><img src='react.svg' width={"30px"} /><Heading size={"sm"} mt={"4px"} ml={"6px"}>Corona Auto Detailing</Heading></Flex></Box>
             <Spacer />
             <HStack
               as={'nav'}
