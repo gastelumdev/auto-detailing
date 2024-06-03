@@ -18,9 +18,11 @@ const NavLink = ({ href, children }: { href: string, children: ReactNode }) => (
     px={2}
     py={1}
     rounded={'md'}
+    color={"#c2ced6"}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
+      color: "white",
+      bg: useColorModeValue('gray.800', 'gray.900'),
     }}
     href={href}>
     {children}
@@ -32,7 +34,7 @@ export default function Navbar({ links, children }: { links: {href: string, titl
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.800', 'gray.900')} color={"white"} px={4}>
+      <Box bg={useColorModeValue('gray.800', 'gray.900')} color={"#f7fafc"} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -42,6 +44,7 @@ export default function Navbar({ links, children }: { links: {href: string, titl
             aria-label={'Open Menu'}
             display={{ md: 'none' }}
             onClick={isOpen ? onClose : onOpen}
+            _hover={{bg: useColorModeValue('gray.800', 'gray.900')}}
           />
           <Flex justify={"space-between"} alignItems={'center'}>
             <Box><Heading size={"sm"}>Corona Auto Detailing</Heading></Box>
