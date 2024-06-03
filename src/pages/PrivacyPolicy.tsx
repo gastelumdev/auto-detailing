@@ -3,7 +3,7 @@ import { businessName, email, phoneNumber, phoneNumberText } from '../config';
 
 function PrivacyPolicy() {
   return (
-    <Box py={16} px={16} bg="gray.100">
+    <Box py={16} bg="gray.100">
       <Container maxW="container.lg">
         <Heading as="h1" size="2xl" mb={4}>Privacy Policy</Heading>
         <Text mb={4}>
