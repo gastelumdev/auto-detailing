@@ -12,53 +12,33 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import Navbar from './components/Navbar';
 
 const businessName = "Corona Auto Detailing"
-
-function App() {
-  return (
-    <Box>
-      <Header />
-      <Hero />
-      <Services />
-      <About />
-      <Testimonials />
-      <Contact />
-      <Footer />
-    </Box>
-  );
-}
-
 const navItems = [
   {href: "#services", title: "Services"},
   {href: "#about", title: "About Us"},
   {href: "#testimonials", title: "Testimonials"},
   {href: "#contact", title: "Contact"},
-]
+];
+const email = "youremail@email.com"
+const phoneNumber = "+6264955050"
+const phoneNumberText = "(626) 495-5050"
 
-function Header() {
+function App() {
   return (
-    <Box bg="gray.800" color="white" py={4}>
-      <Container maxW="container.xl">
-        <Flex justify="space-between" align="center">
-          <Heading as="h1" size="md">
-            {businessName}
-          </Heading>
-          <nav>
-            <List display="flex" spacing={4}>
-              {navItems.map((item) => {
-                return <NavItem key={item.href} href={item.href} title={item.title} />
-              })}
-            </List>
-          </nav>
-        </Flex>
-      </Container>
-    </Box>
+    <Navbar links={navItems}>
+      <Box>
+        {/* <Header /> */}
+        <Hero />
+        <Services />
+        <About />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </Box>
+    </Navbar>
   );
-}
-
-function NavItem({href, title}: {href: string, title: string}) {
-  return <ListItem px={"15px"} mt={"16px"}><Link href={href}>{title}</Link></ListItem>
 }
 
 function Hero() {
@@ -78,7 +58,7 @@ function Hero() {
         <Text fontSize="xl" mb={8}>
           Top-notch care for your vehicle, guaranteed satisfaction!
         </Text>
-        <Button colorScheme="red" size="lg">
+        <Button as="a" colorScheme="red" size="lg" href={`mailto:${email}`}>
           Book Your Appointment Today!
         </Button>
       </Container>
@@ -188,16 +168,13 @@ function Contact() {
           Contact Us
         </Heading>
         <Text>
-          <strong>Phone:</strong> [Phone Number]
-        </Text>
-        <Text>
-          <strong>Email:</strong> [Email Address]
+          <strong>Phone:</strong> <a href={`tel:${phoneNumber}`}>{phoneNumberText}</a>
         </Text>
         <Heading as="h3" size="md" mb={4} mt={8}>Business Hours</Heading>
         <Text>Monday - Friday: 9:00 AM - 6:00 PM</Text>
         <Text>Saturday: 9:00 AM - 4:00 PM</Text>
         <Text>Sunday: Closed</Text>
-        <Button colorScheme="red" size="lg" mt={8}>
+        <Button as={"a"} colorScheme="red" size="lg" mt={8} href={`mailto:${email}`}>
           Contact Us for a Free Quote!
         </Button>
         <Flex justify="center" mt={8}>
